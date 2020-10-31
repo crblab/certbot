@@ -1,0 +1,17 @@
+version: '3.7'
+
+networks:
+  custom:
+    name: custom
+    driver: bridge
+
+services:
+  certbot:
+    image: crblab/certbot:latest
+    container_name: certbot
+    restart: always
+    command: "/scripts/run_certbot.sh"
+    networks:
+      - custom
+    env_file:
+      - deploy.env
