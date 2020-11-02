@@ -9,9 +9,10 @@ services:
   certbot:
     image: crblab/certbot:latest
     container_name: certbot
-    restart: always
-    command: "/scripts/run_certbot.sh"
     networks:
       - custom
+    volumes: 
+      - ~/dockerdata/certbot/certs:/certs
+      - ~/dockerdata/certbot/live:/etc/letsencrypt/live
     env_file:
       - deploy.env
