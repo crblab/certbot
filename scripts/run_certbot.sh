@@ -23,12 +23,13 @@ get_certificate() {
     if $CONCAT
     then
       # concat the full chain with the private key (e.g. for haproxy)
-      cat /etc/letsencrypt/live/$d/fullchain.pem /etc/letsencrypt/live/$d/privkey.pem > /certs/$d.pem
-    else
-      # keep full chain and private key in separate files (e.g. for nginx and apache)
-      cp /etc/letsencrypt/live/$d/fullchain.pem /certs/$d.pem
-      cp /etc/letsencrypt/live/$d/privkey.pem /certs/$d.key
+      mkdir -p /certs/$d/ && cat /etc/letsencrypt/live/$d/fullchain.pem /etc/letsencrypt/live/$d/privkey.pem > /certs/$d/concat.pem
     fi
+    # keep full chain and private key in separate files (e.g. for nginx and apache)
+    mkdir -p /certs/$d/ && cp /etc/letsencrypt/live/$d/fullchain.pem /certs/$d/fullchain.pem
+    mkdir -p /certs/$d/ && cp /etc/letsencrypt/live/$d/privkey.pem /certs/$d/private.key
+    mkdir -p /certs/$d/ && cp /etc/letsencrypt/live/$d/cert.pem /certs/$d/cert.pem
+    mkdir -p /certs/$d/ && cp /etc/letsencrypt/live/$d/chain.pem /certs/$d/chain.pem
     echo "Certificate obtained for $CERT_DOMAINS! Your new certificate - named $d - is in /certs"
   else
     echo "Cerbot failed for $CERT_DOMAINS. Check the logs for details."

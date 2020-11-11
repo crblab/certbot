@@ -12,7 +12,6 @@ services:
     networks:
       - custom
     volumes: 
-      - ~/dockerdata/certbot/certs:/certs
-      - ~/dockerdata/certbot/live:/etc/letsencrypt/live
+      - ~/dockerdata/certbot:/certs
     env_file:
       - deploy.env

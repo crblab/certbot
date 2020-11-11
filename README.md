@@ -21,6 +21,13 @@ If you use a DNS server to manage your domain, you can configure these environme
 * <strong>CLOUDFLARE</strong>: set this variable to your Cloudflare API token if you want to automates the process of completing challenge when you use Cloudflare as DNS server.
 * <strong>DIGITALOCEAN</strong>: set this variable to your DigitalOcean API token if you want to automates the process of completing challenge when you use DigitalOcean as DNS server.
 
+### Certifications
+All obtained certifications are placed in <strong>/certs</strong> folder which linked to <strong>~/dockerdata/certbot/certs</strong> as in <strong>docker-compose.yml</strong> file:
+* <strong>.crt</strong>: the signed certification.
+* <strong>.chn</strong>: the certificate chain (root certificate and all intermediate certificates) needed to validate the certificate is signed by a trusted root certificate.
+* <strong>.key</strong>: the private key. please keep this file private and secure at all times.
+* <strong>.pem</strong>: a combination of both certification and chain.
+
 ### Notice
 The first time you start it up, you may want to run the certificate generation script immediately:
 ```
