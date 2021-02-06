@@ -48,6 +48,10 @@ elif [ -n "$DIGITALOCEAN" ]
 then
   echo "dns_digitalocean_token = $DIGITALOCEAN" > digitalocean.ini
   args="--dns-digitalocean --dns-digitalocean-credentials digitalocean.ini --dns-digitalocean-propagation-seconds 60"
+elif [ -n "$DNSIMPLE" ]
+then
+  echo "dns_dnsimple_token = $DNSIMPLE" > dnsimple.ini
+  args="--dns-dnsimple --dns-dnsimple-credentials dnsimple.ini --dns-dnsimple-propagation-seconds 60"
 else
   args="--standalone --preferred-challenges http-01"
 fi

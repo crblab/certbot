@@ -1,5 +1,4 @@
 FROM python:3.6-alpine
-LABEL maintainer="Hieu Pham <hieupt.ai@gmail.com>"
 
 RUN apk add --no-cache --virtual .build-deps linux-headers gcc musl-dev\
   && apk add --no-cache libffi-dev openssl-dev dialog\
