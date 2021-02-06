@@ -15,11 +15,12 @@ Before deploying, almost things can be configured by copy <strong>template.env</
 * <strong>WEBROOT</strong>: set this variable to the webroot path if you want to use the webroot plugin. Leave to use the standalone webserver.
 * <strong>EMAIL</strong>: where you will receive updates from letsencrypt.
 *  <strong>CONCAT</strong>: true or false, whether you want to concatenate the certificate's full chain with the private key (required for e.g. haproxy), or keep the two files separate (required for e.g. nginx or apache).
-* <strong>SEPARATE</strong>: true or false, whether you want one certificate per domain or one certificate valid for all domains.
+* <strong>SEPARATE</strong>: true or false, whether you want one certificate per a domain or one certificate valid for all domains.
 If you use a DNS server to manage your domain, you can configure these environment variables:
 * <strong>WEBROOT</strong>: set this variable to the webroot path if you want to use the webroot plugin.
-* <strong>CLOUDFLARE</strong>: set this variable to your Cloudflare API token if you want to automates the process of completing challenge when you use Cloudflare as DNS server.
-* <strong>DIGITALOCEAN</strong>: set this variable to your DigitalOcean API token if you want to automates the process of completing challenge when you use DigitalOcean as DNS server.
+* <strong>CLOUDFLARE</strong>: set this variable to your Cloudflare API token if you want to automate the process of completing challenge when you use Cloudflare as DNS server.
+* <strong>DIGITALOCEAN</strong>: set this variable to your DigitalOcean API token if you want to automate the process of completing challenge when you use DigitalOcean as DNS server.
+* <strong>DNSIMPLE</strong>: set this variable to your DNSimple API token if you want to automate the process of completing challenge when you use DNSimple as DNS server.
 
 ### Certifications
 All obtained certifications are placed in <strong>/certs</strong> folder which linked to <strong>~/dockerdata/certbot/certs</strong> as in <strong>docker-compose.yml</strong> file:
@@ -65,8 +66,8 @@ server {
 ```
 
 ## Maintainers
-* [<strong>Hieu Tr. Pham</strong>](https://github.com/hieupth)
+* [**Hieu Tr. Pham**](https://github.com/hieupth) (author)
 
 ## License
 [GNU General Public License v3.0](https://github.com/crblab/certbot/blob/main/LICENSE) <br>
-Copyright (c) 2020, Cerebro Research Lab. All rights reserved.
+Copyright (c) 2020, [**Cerebro Research**](https://github.com/crblab). All rights reserved.
