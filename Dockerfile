@@ -5,7 +5,7 @@ RUN apk add --no-cache --virtual .build-deps linux-headers gcc musl-dev\
   && pip install certbot\
   && apk del .build-deps\
   && mkdir /scripts\
-  && pip install certbot-dns-cloudflare certbot-dns-digitalocean 
+  && pip install setuptools_rust certbot-dns-cloudflare certbot-dns-digitalocean
 
 ADD crontab /etc/crontabs
 RUN crontab /etc/crontabs/crontab
