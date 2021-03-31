@@ -12,6 +12,6 @@ services:
     networks:
       - custom
     volumes: 
-      - ~/dockerdata/certbot:/certs
+      - ~/docker/certbot:/certs
     env_file:
       - deploy.env
