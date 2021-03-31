@@ -1,11 +1,13 @@
 FROM python:3.6-alpine
 
+ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
+
 RUN apk add --no-cache --virtual .build-deps linux-headers gcc musl-dev\
   && apk add --no-cache libffi-dev openssl-dev dialog\
   && pip install certbot\
   && apk del .build-deps\
   && mkdir /scripts\
-  && pip install setuptools_rust certbot-dns-cloudflare certbot-dns-digitalocean
+  && pip install certbot-dns-cloudflare certbot-dns-digitalocean
 
 ADD crontab /etc/crontabs
 RUN crontab /etc/crontabs/crontab
