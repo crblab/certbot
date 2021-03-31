@@ -69,5 +69,5 @@ server {
 * [**Hieu Tr. Pham**](https://github.com/hieupth) (author)
 
 ## License
-[GNU General Public License v3.0](https://github.com/crblab/certbot/blob/main/LICENSE) <br>
-Copyright (c) 2020, [**Cerebro Research**](https://github.com/crblab). All rights reserved.
+[GNU General Public License v3.0](https://github.com/hieupth/certbot/blob/main/LICENSE) <br>
+Copyright (c) 2020, [Hieu Tr. Pham](https://github.com/hieupth). All rights reserved.
