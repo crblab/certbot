@@ -4,14 +4,17 @@ networks:
   custom:
     name: custom
     driver: bridge
+  default:
+    external:
+      name: custom
 
 services:
   certbot:
-    image: crblab/certbot:latest
+    image: hieupth/certbot:latest
     container_name: certbot
     networks:
       - custom
     volumes: 
-      - ~/docker/certbot:/certs
+      - ~/docker/volumes/certbot:/certs
     env_file:
-      - deploy.env
+      - .env
