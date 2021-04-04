@@ -4,11 +4,9 @@ Docker image for Let's Encrypt certbot with DNS plugins and auto-renew enabled.
 ## Deploys
 This project can be deployed quickly with docker command:
 ```
-$ git clone https://github.com/crblab/certbot 
-$ cd certbot
 $ docker-compose up -d
 ```
-Before deploying, almost things can be configured by copy <strong>template.env</strong> file to <strong>deploy.env</strong> file and then edit it as your own needs.
+Before deploying, almost things can be configured by copy <strong>.env.template</strong> file to <strong>.env</strong> file and then edit it as your own needs.
 
 ### Environment variables
 * <strong>DOMAINS</strong>: a space or comma separated list of domains for which you want to generate certificates. 
