@@ -1,14 +1,18 @@
 # Certbot Docker Image
-Docker image for Let's Encrypt certbot with DNS plugins and auto-renew enabled.
+Docker image for Let's Encrypt Certbot enabled DNS plugins with auto-renew cronjob.
 
-## Deploys
-This project can be deployed quickly with docker command:
+## How to deploy?
+The project can be deployed quickly via docker-compose command:
 ```
+$ git clone https://github.com/hieupth/certbot
+$ cd certbot
 $ docker-compose up -d
 ```
-Before deploying, almost things can be configured by copy <strong>.env.template</strong> file to <strong>.env</strong> file and then edit it as your own needs.
 
-### Environment variables
+## Configuration
+Copy <strong>.env.template</strong> file to <strong>.env</strong> file and then edit it as your own needs.
+
+## Environment Variables
 * <strong>DOMAINS</strong>: a space or comma separated list of domains for which you want to generate certificates. 
 * <strong>WEBROOT</strong>: set this variable to the webroot path if you want to use the webroot plugin. Leave to use the standalone webserver.
 * <strong>EMAIL</strong>: where you will receive updates from letsencrypt.
@@ -20,8 +24,8 @@ If you use a DNS server to manage your domain, you can configure these environme
 * <strong>DIGITALOCEAN</strong>: set this variable to your DigitalOcean API token if you want to automate the process of completing challenge when you use DigitalOcean as DNS server.
 * <strong>DNSIMPLE</strong>: set this variable to your DNSimple API token if you want to automate the process of completing challenge when you use DNSimple as DNS server.
 
-### Certifications
-All obtained certifications are placed in <strong>/certs</strong> folder which linked to <strong>~/dockerdata/certbot/certs</strong> as in <strong>docker-compose.yml</strong> file:
+## Certifications
+All obtained certifications are placed in <strong>/certs</strong> folder which linked to <strong>${CERTS_DIR}</strong> as in <strong>docker-compose.yml</strong> file:
 * <strong>.crt</strong>: the signed certification.
 * <strong>.chn</strong>: the certificate chain (root certificate and all intermediate certificates) needed to validate the certificate is signed by a trusted root certificate.
 * <strong>.key</strong>: the private key. please keep this file private and secure at all times.
@@ -64,8 +68,8 @@ server {
 ```
 
 ## Maintainers
-* [**Hieu Tr. Pham**](https://github.com/hieupth) (author)
+* [**Hieu Pham**](https://github.com/hieupth) (author)
 
 ## License
-[GNU General Public License v3.0](https://github.com/hieupth/certbot/blob/main/LICENSE) <br>
-Copyright (c) 2020, [Hieu Tr. Pham](https://github.com/hieupth). All rights reserved.
+[MIT License](https://github.com/hieupth/certbot/blob/main/LICENSE) <br>
+Copyright &copy; 2020, [Hieu Pham](https://github.com/hieupth). All rights reserved.
